@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <link href='https://fonts.googleapis.com/css?family=Barrio' rel='stylesheet'>
+
+        <style>
+            body{
+                font-family: 'Barrio';font-size: 22px;
+            }
+            .center{
+                text-align: center;
+            }
+            img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            #rcorners {
+                display:inline-block;
+                background-color:lightsalmon;
+                border-radius: 15px 50px;
+                padding: 20px; 
+                width: 400px;
+                height: 45px; 
+            }
+            p{
+                font-size: 16px;
+            }
+            h2{
+                text-decoration: overline underline dotted maroon;
+            }
+            h4{
+                font-size: 18px;
+            }
+        </style>
+    </head>
+
+    <body style="background-color:lemonchiffon">
+        <div class="center">
+            <h1 id="rcorners" >
+                <b>Movie Explorer</b>
+             </h1>
+             <p>One of my favorites (refresh for more):<br></p>
+             <h2>
+                 <em>~ ~  {{title}}  ~ ~</em>
+             </h2>
+             <h3>
+                 {{tagline}}
+             </h3>
+             <h4>
+                 Genres: {{genres}}
+             </h4>
+     
+             <img src= {{image}} alt={{title}}>
+             
+             <h3>
+                 <a href= {{link}}> Wikipedia Link for {{title}}</a>
+             </h3>
+             
+             <h3></h3>
+             <h4>
+                 Is this your favorite movie, too? Provide an email address to recieve<br>the best ways to watch it!
+             </h4>
+             <form method="POST" action="'/handle_form">
+                 <input type="text" id="secret_id"/>
+                 <input type="submit" value="SUBMIT"/>
+             </form>
+        </div>
+        
+    </body>
+</html>
