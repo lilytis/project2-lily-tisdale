@@ -1,0 +1,21 @@
+<html>
+    <head></head>
+    <body>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <b>{{message}}</b>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        <h1>Register here!</h1>
+
+        <a href="{{url_for('login')}}">Already have an account? Log In here.</a>
+
+        <form method="POST" action="/handle_form">
+            <input type="text" id="secret_id" name="username"/>
+            <input type="submit" value="Create account"/>
+        </form>
+    </body>
+</html>
