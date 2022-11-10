@@ -7,6 +7,7 @@ import requests
 import json
 from dotenv import load_dotenv, find_dotenv
 from random import randrange
+import psycopg2
 
 load_dotenv(find_dotenv())
 
@@ -44,7 +45,7 @@ def get_movies():
     return movie_info
 
     def get_wiki_url(title):
-    request = requests.Session()
+        request = requests.Session()
 
     WIKI_URL = "https://en.wikipedia.org/w/api.php"
 
@@ -63,8 +64,6 @@ def get_movies():
 @app.route('/')
 def index():
     return [str(person) for person in Person.query.all()]
-# def home():
-#     return flask.render_template('home.html')
 
 @app.route('/login')
 def login():
@@ -98,8 +97,8 @@ def handle_username_submission():
         flask.flash('Try again. Username invalid.')
         return flask.redirect(flask.url_for('login'))
 
+with app.app_context():
+    db.create_all()
+
 if __name__ == '__main__':
-    app.run(
-        host=os.getenv('IP', '0.0.0.0'),
-        port=int(os.getenv('PORT', 8080)),
-    )
+    app.run()
