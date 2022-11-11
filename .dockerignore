@@ -107,6 +107,7 @@
 **/.venv
 **/env
 **/venv
+**/project2_venv
 **/ENV
 **/env.bak
 **/venv.bak
