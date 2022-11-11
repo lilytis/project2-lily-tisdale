@@ -11,6 +11,7 @@ class Person(db.Model):
 
 class Review(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    movieID = db.Column(db.Integer)
     rating_score = db.Column(db.Integer)
     review = db.Column(db.String(500))
     
