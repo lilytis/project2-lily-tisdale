@@ -50,21 +50,22 @@
                  Genres: {{genres}}
              </h4>
      
-             <img src= {{image}} alt={{title}}>
+             <img src={{image}} alt={{title}}>
              
              <h3>
-                 <a href= {{link}}> Wikipedia Link for {{title}}</a>
+                 <a href={{link}}> Wikipedia Link for {{title}}</a>
              </h3>
              
              <h3></h3>
-             <h4>Movie ID:</h4>
+             <h4>Movie ID ( {{id}} ):</h4>
              <form method="POST" action="'/handle_form">
                  <input type="text" id="secret_id"/>
              </form>
              <h4>Rating (out of 5):</h4>
              <form method="POST" action="'/handle_form">
                 <input type="text" id="secret_id"/>
-             </form><br>
+             </form>
+             <h4>Review</h4>
              <form method="POST" action="'/handle_form">
                 <input type="text" id="secret_id"/>
             </form>

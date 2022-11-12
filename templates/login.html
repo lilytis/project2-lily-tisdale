@@ -1,20 +1,21 @@
 <html>
     <head></head>
     <body>
-        {% with messages = get_flashed_messages() %}
+        <!-- {% with messages = get_flashed_messages() %}
         {% if messages %}
             {% for message in messages %}
                 <b>{{message}}</b>
             {% endfor %}
         {% endif %}
-        {% endwith %}
+        {% endwith %} -->
 
         <h1>Welcome to your movie review experience</h1><br>
         <h1>Please log in to start</h1>
-            <form method="POST" action="/handle_form">
-                <input type="text" id="secret_id" name="username"/>
-                <input type="submit" value="Login"/>
-            </form>
+
+            <form method="POST" action="/login">
+                <input type="text" id="username" name="username" placeholder="Enter username"/>
+                <button type="submit">Log in</button>
+            </form><br>
 
             <a href="{{url_for('register')}}">Don't have an accout? Sign Up here.</a>
     </body>
