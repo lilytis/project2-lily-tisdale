@@ -35,6 +35,13 @@
     </head>
 
     <body style="background-color:lemonchiffon">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <b>{{message}}</b>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
         <div class="center">
             <h1 id="rcorners" >
                 <b>Movie Explorer</b>
@@ -57,20 +64,23 @@
              </h3>
              
              <h3></h3>
+             <h4>Username</h4>
+             <form method="POST" action="'/movies">
+                 <input type="text" id="user" name="user"/>
+             </form>
              <h4>Movie ID ( {{id}} ):</h4>
-             <form method="POST" action="'/handle_form">
-                 <input type="text" id="secret_id"/>
+             <form method="POST" action="/movies">
+                 <input type="text" id="movieID" name="movieID"/>
              </form>
              <h4>Rating (out of 5):</h4>
-             <form method="POST" action="'/handle_form">
-                <input type="text" id="secret_id"/>
+             <form method="POST" action="/movies">
+                <input type="text" id="rating" name="rating"/>
              </form>
              <h4>Review</h4>
-             <form method="POST" action="'/handle_form">
-                <input type="text" id="secret_id"/>
+             <form method="POST" action="/movies">
+                <input type="text" id="review" name="review"/><br><br>
+                <button type="submit">Submit</button>
             </form>
-             
         </div>
-        
     </body>
 </html>
